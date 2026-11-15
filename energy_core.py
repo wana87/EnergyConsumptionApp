@@ -22,6 +22,8 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeRegressor
 
+CORE_VERSION = 2  # dinaikkan bila antarmuka modul ini berubah; dicek oleh app.py
+
 BASE_DIR = Path(__file__).parent
 DATA_PATH = BASE_DIR / "data" / "Energy_consumption.csv"
 

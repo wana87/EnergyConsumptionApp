@@ -73,3 +73,10 @@ Jalankan tes dengan `python tests/test_core.py` atau `pytest tests`.
 - Tampilan memuat font Barlow Condensed dan Public Sans dari Google Fonts. Tanpa internet aplikasi tetap jalan dengan font bawaan.
 - Versi Streamlit dikunci (`1.67.0`) karena sebagian gaya CSS bergantung pada struktur HTML Streamlit.
 - Diuji dengan pandas 2.2 dan 3.0, scikit-learn 1.9, plotly 7.1.
+
+## Pemecahan masalah
+
+- **`AttributeError: module 'energy_core' has no attribute ...`** berarti `energy_core.py` di repository masih versi lama,
+  sementara `app.py` sudah versi baru. Ganti seluruh file dengan isi zip, bukan hanya sebagian. Bila file di GitHub sudah benar,
+  buka **Manage app** lalu **Reboot app** supaya modul lama di memori dibuang.
+- Setelah mengunggah ulang, pastikan folder `.streamlit/` dan `data/` ikut terunggah (folder berawalan titik sering terlewat).

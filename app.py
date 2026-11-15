@@ -21,6 +21,18 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto",
 )
+
+# Pemeriksaan: bila file di repository bercampur antara versi lama dan baru, tampilkan penjelasan yang jelas
+# (di Streamlit Cloud pesan galat Python disamarkan sehingga sulit dilacak).
+if getattr(ec, "CORE_VERSION", 0) < 2:
+    st.error(
+        "File **energy_core.py** yang terbaca masih versi lama, tidak cocok dengan app.py. "
+        "Ganti seluruh file di repository dengan isi paket terbaru (app.py, energy_core.py, ui.py, views_explore.py, "
+        "views_predict.py, views_info.py, folder data dan .streamlit). Jika file di GitHub sudah benar, buka **Manage app** "
+        "lalu pilih **Reboot app**."
+    )
+    st.stop()
+
 ui.inject_css()
 
 PAGES = {
